@@ -20,8 +20,14 @@
         >
             <a-assets>
                 <a-asset-item
-                    id="animated-asset"
+                    id="Forklift-asset"
                     src="Forklift/asset.glb"
+                ></a-asset-item>
+            </a-assets>
+            <a-assets>
+                <a-asset-item
+                    id="Reach-asset"
+                    src="Reach/asset.glb"
                 ></a-asset-item>
             </a-assets>
 
@@ -35,13 +41,41 @@
                 id="markerA"
             >
                 <a-entity
-                    id="bowser-model"
+                    id="Forklift-model"
                     scale="0.9829724494421218 0.9829724494421218 0.9829724494421218"
                     animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
+                    gltf-model="#Forklift-asset"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
+                <a-text
+                    value="用手指旋轉模型"
+                    position="0 0.5 -0.5"
+                ></a-text>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="Reach/marker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+            >
+                <a-entity
+                    id="Reach-model"
+                    scale="0.9829724494421218 0.9829724494421218 0.9829724494421218"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#Reach-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+
+                <a-text
+                    value="用手指旋轉模型"
+                    position="0 0.5 -0.5"
+                ></a-text>
             </a-marker>
 
             <a-entity camera></a-entity>
